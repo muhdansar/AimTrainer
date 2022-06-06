@@ -32,7 +32,7 @@ button {
     position: relative;
     padding: 30px 100px 30px 100px;
     margin-top: 20%;
-    background-color: greenyellow;
+    background-color: red;
     border-radius: 10px
 }
 
@@ -61,4 +61,10 @@ h1 {
     text-align: center;
     position: relative;
     margin: auto;
+}
+
+#finalScore {
+    font-family: "Orbitron", sans-serif;
+    font-size: 70px;
+    border: 1px solid black;
 }

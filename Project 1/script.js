@@ -13,9 +13,32 @@ const mathPositionHeight = (window.innerHeight - 400)
 const clickArray = [];
 
 const start = document.querySelector("button");
+
+start.addEventListener("mouseover", function (e) {
+    start.style.backgroundColor = "greenyellow";
+})
+start.addEventListener("mouseout", function (e) {
+    start.style.backgroundColor = "red";
+})
+
+ //restart function//
+ function restartGame() {
+    const restartButton = document.createElement("button");
+    restartButton.innerText = "Go again?";
+    body.append(restartButton);
+    restartButton.addEventListener("click", function (e) {
+        const cleanScore = document.getElementById("finalScore");
+        cleanScore.remove();
+        restartButton.remove();
+        doAll(); //i stopped here;
+    });
+};
+
 //start on click start//
 start.addEventListener("click", function (e) {
     start.remove();
+    doAll();
+    function doAll() {
 //countdown//
     setTimeout(counter, 1000);
     setTimeout(counter2, 2000);
@@ -36,22 +59,6 @@ start.addEventListener("click", function (e) {
     }
 //countdown ends//
 
-//timer top left//
-setTimeout(timerDelay, 4000);
-
-let seconds = 5; //change time later
-function timerDelay() {
-const clockTimer = document.getElementById("time");
-let startIt = setInterval(clockStart, 1000);
-function clockStart() {
-    seconds -= 1;
-    clockTimer.innerText = ("Time: " + seconds + " seconds")
-    if (seconds === 0) {
-        clearInterval(startIt);
-        }
-    }
-};
-
 //allow for game to start after countdown//
     setTimeout(gameStart, 4000);
 
@@ -60,6 +67,34 @@ function clockStart() {
 
     const timerPrompt = document.querySelector("h1");
     timerPrompt.remove();
+    
+    function postScore() {
+        const yourScore = document.createElement("h2");
+        yourScore.id = "finalScore"
+        yourScore.style.backgroundColor = "lightgray"
+        yourScore.innerText = ("You clicked " + clickArray.length + " circles in 1 minute.")
+        body.append(yourScore);
+    };
+
+    //invoke timer function
+    let seconds = 5; //change time later
+    function timerDelay() {
+    const clockTimer = document.getElementById("time");
+    let startIt = setInterval(clockStart, 1000);
+    function clockStart() {
+    seconds -= 1;
+    clockTimer.innerText = ("Time: " + seconds + " seconds");
+    //what happens after 0//
+    if (seconds === 0) {
+        clearInterval(startIt);
+        makeCircle.remove();
+        clearInterval(setting);
+        postScore();
+        restartGame();
+        }
+    }
+};
+    timerDelay();
 
     //create new circle on start press//
     const makeCircle = document.createElement("div");
@@ -112,7 +147,7 @@ function clockStart() {
             )
         }
     }
-)
+})
 
 
 

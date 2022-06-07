@@ -170,31 +170,43 @@ function doAll() {
             if (clickArray.length > 10) {
                 clearInterval(setting);
                 setting = setInterval(circleRemake, 800);
+                const smaller = document.querySelector(".circle");
+                smaller.style.animationDuration = "1.8s";
             };
 
             if (clickArray.length > 20) {
                 clearInterval(setting);
-                setting = setInterval(circleRemake, 700)
+                setting = setInterval(circleRemake, 700);
+                const smaller = document.querySelector(".circle");
+                smaller.style.animationDuration = "1.7s";
             };
 
             if (clickArray.length > 30) {
                 clearInterval(setting);
-                setting = setInterval(circleRemake, 600)
+                setting = setInterval(circleRemake, 600);
+                const smaller = document.querySelector(".circle");
+                smaller.style.animationDuration = "1.6s";
             };
             
             if (clickArray.length > 40) {
                 clearInterval(setting);
-                setting = setInterval(circleRemake, 500)
+                setting = setInterval(circleRemake, 500);
+                const smaller = document.querySelector(".circle");
+                smaller.style.animationDuration = "1.5s";
             };
 
             if (clickArray.length > 50) {
                 clearInterval(setting);
-                setting = setInterval(circleRemake, 450)
+                setting = setInterval(circleRemake, 450);
+                const smaller = document.querySelector(".circle");
+                smaller.style.animationDuration = "1.4s";
             };
 
             if (clickArray.length > 60) {
                 clearInterval(setting);
-                setting = setInterval(circleRemake, 400)
+                setting = setInterval(circleRemake, 400);
+                const smaller = document.querySelector(".circle");
+                smaller.style.animationDuration = "1.3s";
             }
                     }
                 )

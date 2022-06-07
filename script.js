@@ -20,7 +20,6 @@ const start = document.querySelector("button");
 
 start.addEventListener("mouseover", function (e) {
     start.style.backgroundColor = "greenyellow";
-    menuSound.play();
 })
 start.addEventListener("mouseout", function (e) {
     start.style.backgroundColor = "red";
@@ -31,7 +30,15 @@ start.addEventListener("mouseout", function (e) {
     const restartButton = document.createElement("button");
     restartButton.innerText = "Go again?";
     body.append(restartButton);
+    restartButton.addEventListener("mouseover", function (e) {
+        restartButton.style.backgroundColor = "greenyellow";
+    })
+    restartButton.addEventListener("mouseout", function (e) {
+        restartButton.style.backgroundColor = "red";
+    })
     restartButton.addEventListener("click", function (e) {
+        const menuSound = new Audio("menuHover.wav");
+        menuSound.play();
         const cleanScore = document.getElementById("finalScore");
         cleanScore.remove();
         restartButton.remove();
@@ -60,16 +67,22 @@ function doAll() {
     
         const countdown = document.createElement("h1")
         function counter() {
-            countdown.innerText = "Circles coming in 3.."
+            countdown.innerText = "Circles coming in 3..";
             body.append(countdown);
+            const countDown = new Audio("countdownBeep.mp3")
+            countDown.play();
         }
     
         function counter2() {
-            countdown.innerText = "Circles coming in 2.."
+            countdown.innerText = "Circles coming in 2..";
+            const countDown = new Audio("countdownBeep.mp3")
+            countDown.play();
         }
       
         function counter3() {
-            countdown.innerText = "Circles coming in 1.." 
+            countdown.innerText = "Circles coming in 1..";
+            const countDown = new Audio("countdownBeep.mp3")
+            countDown.play(); 
         }
     //countdown ends//
     
@@ -78,7 +91,10 @@ function doAll() {
     
     //game code// 
         function gameStart() {
-    
+        
+        const countDown = new Audio("countdownBeepFinal.mp3")
+        countDown.play();
+
         const timerPrompt = document.querySelector("h1");
         timerPrompt.remove();
         
@@ -156,6 +172,8 @@ function doAll() {
     
         //remove old circle, create new circle//
         makeCircle.addEventListener("click", function (e) {
+            // const menuSound = new Audio("menuHover.wav");
+            // menuSound.play();
             clearInterval(setting);
             clickArray.push("i");
             makeCircle.remove();

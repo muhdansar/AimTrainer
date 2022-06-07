@@ -172,8 +172,8 @@ function doAll() {
     
         //remove old circle, create new circle//
         makeCircle.addEventListener("click", function (e) {
-            // const menuSound = new Audio("menuHover.wav");
-            // menuSound.play();
+            const laser = new Audio("laser5.wav");
+            laser.play();
             clearInterval(setting);
             clickArray.push("i");
             makeCircle.remove();

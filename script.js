@@ -157,7 +157,7 @@ function doAll() {
         makeCircle.addEventListener("mouseout", function (e) {
             makeCircle.style.backgroundColor = "red";
         });
-    
+
         //spawn circle if not clicked//
             function circleRemake() {
                 makeCircle.remove();
@@ -186,6 +186,12 @@ function doAll() {
             let scoring = document.querySelector("#score");
             scoring.innerText = "Score: " + clickArray.length;
             
+        //every 10 score level up sound//
+        if (clickArray.length % 10 === 0) {
+            const getFaster = new Audio("gotFast.wav")
+            getFaster.play();
+        }
+
             //restart intervals
             setting = setInterval(circleRemake, 1000);
 

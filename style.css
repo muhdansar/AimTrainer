@@ -52,6 +52,7 @@ button {
 
 #score {
     font-family: "Orbitron", sans-serif;
+    font-size: 35px;
     display: inline;
     position: relative;
     margin: 0 auto;
@@ -64,6 +65,7 @@ button {
 
 #time {
     font-family: "Orbitron", sans-serif;
+    font-size: 35px;
     display: inline;
     position: relative;
     margin: 0 auto;
@@ -76,6 +78,7 @@ button {
 
 #newScore {
     font-family: "Orbitron", sans-serif;
+    font-size: 35px;
     display: inline;
     position: relative;
     margin: 0 auto;

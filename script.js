@@ -66,20 +66,20 @@ function doAll() {
     
         const countdown = document.createElement("h1")
         function counter() {
-            countdown.innerText = "Circles coming in 3..";
+            countdown.innerText = "Click the circles in 3..";
             body.append(countdown);
             const countDown = new Audio("countdownBeep.mp3")
             countDown.play();
         }
     
         function counter2() {
-            countdown.innerText = "Circles coming in 2..";
+            countdown.innerText = "Click the circles in 2..";
             const countDown = new Audio("countdownBeep.mp3")
             countDown.play();
         }
       
         function counter3() {
-            countdown.innerText = "Circles coming in 1..";
+            countdown.innerText = "Click the circles in 1..";
             const countDown = new Audio("countdownBeep.mp3")
             countDown.play(); 
         }
@@ -88,7 +88,7 @@ function doAll() {
     //allow for game to start after countdown; runs gameStart fn//
         setTimeout(gameStart, 4000);
     
-    //game code// 
+    //game code as a function// 
         function gameStart() {
         
         const countDown = new Audio("countdownBeepFinal.mp3")
@@ -133,7 +133,6 @@ function doAll() {
             postScore();
             restartGame();
             setHighScore();
-
             }
         }
     };

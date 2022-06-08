@@ -17,7 +17,6 @@ const clickArray = [];
 
 const start = document.querySelector("button");
 
-
 start.addEventListener("mouseover", function (e) {
     start.style.backgroundColor = "greenyellow";
 })
@@ -86,7 +85,7 @@ function doAll() {
         }
     //countdown ends//
     
-    //allow for game to start after countdown//
+    //allow for game to start after countdown; runs gameStart fn//
         setTimeout(gameStart, 4000);
     
     //game code// 
@@ -108,7 +107,7 @@ function doAll() {
         //function to update highest score//
         function setHighScore() {
             let newHighScore;
-            newHighScore = clickArray.length //stuck here
+            newHighScore = clickArray.length 
             highScoreArray.push(newHighScore);
             console.log(highScoreArray);
             let printThis = Math.max(...highScoreArray);
@@ -118,7 +117,7 @@ function doAll() {
             clickArray.splice(0, clickArray.length);
         }//works; need logic for finding the highest number(done)
 
-        //invoke timer function
+        //invoke timer function//
         let seconds = 60; //change time later
         function timerDelay() {
         const clockTimer = document.getElementById("time");
@@ -126,7 +125,7 @@ function doAll() {
         function clockStart() {
         seconds -= 1;
         clockTimer.innerText = ("Time: " + seconds + " seconds");
-        //what happens after 0//
+        //what happens after timer runs out//
         if (seconds === 0) {
             clearInterval(startIt);
             makeCircle.remove();
@@ -168,7 +167,7 @@ function doAll() {
                 };
     
             
-        let setting = setInterval(circleRemake, 1000);
+        let setting = setInterval(circleRemake, 1400);
     
         //remove old circle, create new circle//
         makeCircle.addEventListener("click", function (e) {
@@ -179,6 +178,7 @@ function doAll() {
             makeCircle.remove();
             const sameContain = document.querySelector("container");
             sameContain.append(makeCircle);
+            //redefining margins, else will use previous margins and no change in position//
             makeCircle.style.marginLeft = (Math.floor((Math.random() * mathPositionWidth))) + "px";
             makeCircle.style.marginTop = (Math.floor((Math.random() * mathPositionHeight))) + "px";
     
@@ -195,6 +195,7 @@ function doAll() {
             //restart intervals
             setting = setInterval(circleRemake, 1400);
 
+            //circles despawn faster and shrink faster//
             if (clickArray.length > 10) {
                 clearInterval(setting);
                 setting = setInterval(circleRemake, 1300);

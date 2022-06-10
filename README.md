@@ -1,5 +1,7 @@
 # Project-1: Aim-Trainer
 
+[You can play the game here!](https://ansars-aimtrainer.netlify.app/)
+
 ## About The Game
 The idea behind this game is that it is meant to be a replica of a tool that is used to practice your "aim" in first-person shooter games. The training is meant to improve your reaction time as well as streamline your mouse movements. This is done by clicking on random circles that pop up at incrementally faster rates. I decided to gameify this process by having "scores" as a point of competitiveness with yourself and others. 
 

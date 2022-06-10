@@ -42,6 +42,8 @@ One of the most difficult things for this project was attempting to integrate th
 
 This issue was solved by reading up further on the setInterval function, and implementing the clearInterval function for every iteration of the circle spawn, while also re-declaring the previous interval after removing the circle. Having solved this issue, I was able to use this same code and apply it to the If conditionals for the increasing speeds of circle despawn for it to run accurately. 
 
+Another issue when the game was still in its teething stages was that setting a function for the random circle spawn and invoking that function for other instances of circle spawning would only take the already generated parameters and instead of spawning randomly would append the circle on the same space. The solution to this was to have the random generator math code be applied to each instance where i wanted the circles to spawn randomly. This made the code a bit lengthier but ultimately functional. Future iterations would take into consideration how to refactor it such that it wouild work. 
+
 ## Further Improvements
 Some things that I want to be able to implement in this game include the ability to save your initials along with the score that you got if you are among the high scores for that session. A way to do this that I have looked into include window.local storage, though I am not entirely confident in implementing it. Another function that I would have liked to include inside this game would be the .toggle function, in order to toggle classes for certain elements and have the css change accordingly. This was attempted as an afterthought once the game was in its completed state, but did not work well enough to be included in the final product.
 
